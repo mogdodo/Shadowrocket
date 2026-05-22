@@ -1,4 +1,5 @@
 # Shadowrocket
+在小火箭的settings中UDP下打开Disable STUN
 
 在Johnshall的lazy配置基础上，增加了防DNS泄露。[General]主要修改如下：
 
