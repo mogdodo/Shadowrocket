@@ -1,0 +1,177 @@
+# Block HTTP3/QUIC
+# AND,((PROTOCOL,UDP),(DEST-PORT,443)),REJECT-NO-DROP
+
+# Apple IPv4 Blocks
+IP-CIDR,17.0.0.0/8,DIRECT,no-resolve
+
+# Apple IPv6 Blocks
+IP-CIDR,2620:149::/32,DIRECT,no-resolve
+IP-CIDR,2403:300::/32,DIRECT,no-resolve
+IP-CIDR,2A01:B740::/32,DIRECT,no-resolve
+
+# Apple Intelligence, Siri
+# https://support.apple.com/en-us/101555
+DOMAIN-SUFFIX,apple-relay.akamaized.net,PROXY
+DOMAIN-SUFFIX,apple-relay.apple.com,PROXY
+DOMAIN-SUFFIX,apple-relay.cloudflare.com,PROXY
+DOMAIN-SUFFIX,apple-relay.fastly-edge.com,PROXY
+
+# Copilot
+DOMAIN,copilot.microsoft.com,PROXY
+DOMAIN,copilot.bing.com,PROXY
+
+# CNAME for apple-relay.apple.com
+DOMAIN-SUFFIX,apple-relay.mask.apple-dns.net,PROXY
+
+# Baidu/iqiyi
+DOMAIN-SUFFIX,baidu.com,DIRECT
+DOMAIN-SUFFIX,baidubcr.com,DIRECT
+DOMAIN-SUFFIX,bdstatic.com,DIRECT
+DOMAIN-SUFFIX,yunjiasu-cdn.net,DIRECT
+
+# Alibaba
+DOMAIN-SUFFIX,taobao.com,DIRECT
+DOMAIN-SUFFIX,alicdn.com,DIRECT
+
+DOMAIN,cdn.angruo.com,PROXY # 安若 CDN（常用于托管特定脚本、去广告规则）
+DOMAIN,images-cn.ssl-images-amazon.com,DIRECT # 亚马逊中国区的商品图片服务器
+DOMAIN,officecdn-microsoft-com.akamaized.net,DIRECT # 微软 Office 办公软件更新下载的 CDN 节点
+
+DOMAIN-SUFFIX,cn,DIRECT
+DOMAIN-SUFFIX,126.net,DIRECT # 网易 126 邮箱及游戏、图片分发服务器
+DOMAIN-SUFFIX,127.net,DIRECT # 网易旗下的多媒体及数据基础服务接口
+DOMAIN-SUFFIX,163.com,DIRECT # 网易官网、网易邮箱及网易各大核心业务
+DOMAIN-SUFFIX,163yun.com,DIRECT # 网易云（网易旗下的云计算与大数据平台）
+DOMAIN-SUFFIX,360buyimg.com,DIRECT # 京东全站商品图片服务器（京东前身叫 360buy）
+DOMAIN-SUFFIX,8686c.com,DIRECT # 国内蓝汛（ChinaCache）大厂提供的 CDN 加速节点
+DOMAIN-SUFFIX,acgvideo.com,DIRECT # 哔哩哔哩（B站）的视频弹幕与流媒体分发服务器
+DOMAIN-SUFFIX,aixifan.com,DIRECT # AcFun 弹幕视频网（A站，现属快手旗下）
+DOMAIN-SUFFIX,akadns.net,DIRECT # Akamai（全球顶级 CDN 厂商）的智能 DNS 解析系统
+DOMAIN-SUFFIX,alibaba.com,DIRECT # 阿里巴巴国际站、B2B 电商平台
+DOMAIN-SUFFIX,alikunlun.com,DIRECT # 阿里云的 CDN 节点域名（国内海量网站托管于此）
+DOMAIN-SUFFIX,alipay.com,DIRECT # 支付宝官网、支付网关及核心结算接口
+DOMAIN-SUFFIX,amap.com,DIRECT # 高德地图网页版及高德 App 数据接口
+DOMAIN-SUFFIX,autonavi.com,DIRECT # 高德地图官方（AutoNavi 底层系统业务）
+DOMAIN-SUFFIX,bdatu.com,DIRECT # 百度地图旗下（或国内大数据测绘相关特定服务）
+DOMAIN-SUFFIX,biliapi.com,DIRECT # 哔哩哔哩（B站）App 客户端的核心数据流 API
+DOMAIN-SUFFIX,biliapi.net,DIRECT # 哔哩哔哩（B站）网络连接、登录与鉴权 API 节点
+DOMAIN-SUFFIX,bilibili.com,DIRECT # 哔哩哔哩（B站）主站网页及核心交互服务
+DOMAIN-SUFFIX,bilibili.tv,DIRECT # 哔哩哔哩海外版或电视端（大屏版）相关域名
+DOMAIN-SUFFIX,ccgslb.com,DIRECT # 蓝汛 CDN（ChinaCache）的智能全局负载均衡域名
+DOMAIN-SUFFIX,ccgslb.net,DIRECT # 蓝汛 CDN 旗下的网络分发及内容路由节点
+DOMAIN-SUFFIX,chinanetcenter.com,DIRECT # 网宿科技（中国极大的 CDN 服务商，海量国内网站提速）
+DOMAIN-SUFFIX,ctrip.com,DIRECT # 携程旅行网（国内极大的机票、酒店、旅游平台）
+DOMAIN-SUFFIX,didialift.com,DIRECT # 滴滴顺风车、拼车业务的核心技术接口
+DOMAIN-SUFFIX,didiglobal.com,DIRECT # 滴滴出行（DiDi Global）国际版及全球业务接口
+DOMAIN-SUFFIX,dingtalk.com,DIRECT # 阿里钉钉（办公沟通、在线考勤、企业协作平台）
+DOMAIN-SUFFIX,douban.com,DIRECT # 豆瓣网（书影音评分、豆瓣小组、文艺社区）
+DOMAIN-SUFFIX,doubanio.com,DIRECT # 豆瓣全站书影音封面、用户头像静态文件服务器
+DOMAIN-SUFFIX,geilicdn.com,DIRECT # 微店（Weidian）旗下的商品图片与店面静态文件 CDN
+DOMAIN-SUFFIX,gtimg.com,DIRECT # 腾讯全站、QQ、微信、游戏公用的核心静态资源库
+DOMAIN-SUFFIX,hdslb.com,DIRECT # 哔哩哔哩（B站）全站最核心的静态文件、图片 CDN
+DOMAIN-SUFFIX,hicloud.com,DIRECT # 华为云（华为手机备份、同步、照片云存储服务）
+DOMAIN-SUFFIX,hostbuf.com,DIRECT # FinalShell 终端（国内流行的内置网络监控 SSH 工具）
+DOMAIN-SUFFIX,idqqimg.com,DIRECT # 腾讯 QQ、腾讯网的核心图片与聊天表情静态资产库
+DOMAIN-SUFFIX,iesdouyin.com,DIRECT # 抖音（Douyin）短视频流分发及核心数据 API 接口
+DOMAIN-SUFFIX,igamecj.com,DIRECT # 腾讯光子工作室群（和平精英、PUBG M）游戏后台
+DOMAIN-SUFFIX,ip-cdn.com,DIRECT # 国内部分网络服务商或网络测速工具的 IP 分发 CDN
+DOMAIN-SUFFIX,ip.la,DIRECT # IP.la（快速查询本机公网 IP 地址和归属地的工具页）
+DOMAIN-SUFFIX,ipip.net,DIRECT # IPIP.net（国内最专业权威的 IP 地址库与网络诊断平台）
+DOMAIN-SUFFIX,ipv6-test.com,DIRECT # IPv6-Test（国际著名的 IPv6 网络连通性在线测试网）
+DOMAIN-SUFFIX,iqiyi.com,DIRECT # 爱奇艺（iQIYI）主站网页及客户端核心流媒体业务
+DOMAIN-SUFFIX,iqiyipic.com,DIRECT # 爱奇艺全站剧集海报、播放器组件、截图图片服务器
+DOMAIN-SUFFIX,jd.com,DIRECT # 京东商城官方主网站（综合电商购物平台）
+DOMAIN-SUFFIX,jd.hk,DIRECT # 京东国际（原京东全球购，主营进口跨境电商商品）
+DOMAIN-SUFFIX,jdpay.com,DIRECT # 京东支付（京东科技旗下的线上支付与金融网关接口）
+DOMAIN-SUFFIX,kaspersky-labs.com,DIRECT # 卡巴斯基杀毒软件（官方病毒库更新及网络防线检测）
+DOMAIN-SUFFIX,keepcdn.com,DIRECT # Keep（国内运动打卡、居家健身 App）图片视频分发
+DOMAIN-SUFFIX,meituan.com,DIRECT # 美团网外卖、酒店预订、团购生活圈核心网页端
+DOMAIN-SUFFIX,meituan.net,DIRECT # 美团内部各业务线、骑手端、商家版 App 底层网络
+DOMAIN-SUFFIX,mgtv.com,DIRECT # 芒果 TV 网页端及客户端（湖南广电优质综艺视频平台）
+DOMAIN-SUFFIX,mi-img.com,DIRECT # 小米商城商品大图、米家生态链海报、社区用户发图
+DOMAIN-SUFFIX,microsoft.com,DIRECT # 微软全球官方网站（Windows 更新、正版验证、应用店等）
+DOMAIN-SUFFIX,miui.com,DIRECT # 小米 MIUI / 澎湃系统（HyperOS）更新、官方论坛
+DOMAIN-SUFFIX,miwifi.com,DIRECT # 小米路由器本地管理后台网址（或云端网络检测）
+DOMAIN-SUFFIX,msecnd.net,DIRECT # 微软 Azure 云计算平台在全球部署的静态资源缓存节点
+DOMAIN-SUFFIX,mxhichina.com,DIRECT # 万网（现阿里云旗下，老牌域名注册、企业邮箱服务）
+DOMAIN-SUFFIX,myapp.com,DIRECT # 腾讯应用宝（国内庞大的安卓手机应用商店分发站）
+DOMAIN-SUFFIX,myqcloud.com,DIRECT # 腾讯云（Tencent Cloud）的核心对象存储与网络分发
+DOMAIN-SUFFIX,netease.com,DIRECT # 网易公司官方架构、网易游戏开发部后台验证接口
+DOMAIN-SUFFIX,netspeedtestmaster.com,DIRECT # 网速测试大师（国内高普及率的手机一键测速工具）
+DOMAIN-SUFFIX,nvidia.com,DIRECT # 英伟达（NVIDIA，显卡驱动下载与更新核心服务器）
+DOMAIN-SUFFIX,office365.com,DIRECT # 微软 Office 365 云端办公、Word/Excel 同步与授权
+DOMAIN-SUFFIX,outlook.com,DIRECT # 微软 Outlook 邮箱（免费个人电子邮箱、日历同步）
+DOMAIN-SUFFIX,paypal.com,DIRECT # PayPal（国际知名的线上第三方跨国支付、结算平台）
+DOMAIN-SUFFIX,paypalobjects.com,DIRECT # PayPal 在全球使用的前端静态资产、支付图标服务器
+DOMAIN-SUFFIX,pstatp.com,DIRECT # 字节跳动核心 CDN（今日头条、抖音静态图文及样式）
+DOMAIN-SUFFIX,qidian.com,DIRECT # 起点中文网（腾讯阅文旗下，极大的原创网文连载平台）
+DOMAIN-SUFFIX,qq.com,DIRECT # 腾讯网（QQ聊天、腾讯视频、腾讯游戏、腾讯新闻等）
+DOMAIN-SUFFIX,wechat.com,DIRECT # 微信国际版及全球互联（朋友圈图片、核心通信协议）
+IP-ASN,132203,DIRECT,no-resolve # 腾讯云/大厂专有公网 BGP IP 网段，不强制解析直连
+DOMAIN-SUFFIX,dns.pub,DIRECT # 腾讯云旗下公共 DNS（DNSPod 高速域名解析服务）
+DOMAIN-SUFFIX,doh.pub,DIRECT # 腾讯提供的 DoH（加密 DNS 协议，防劫持和污染）
+DOMAIN-SUFFIX,ronghub.com,DIRECT # 融云（RongCloud，即时通讯云服务商，App 聊天底层）
+DOMAIN-SUFFIX,s-microsoft.com,DIRECT # 微软官方用于存放静态图表、CSS 样式及验证的域名
+DOMAIN-SUFFIX,s-reader.com,DIRECT # 掌阅（iReader，国内极大的数字阅读、网文连载平台）
+DOMAIN-SUFFIX,seafile.com,DIRECT # Seafile（高性能企业级开源私有云盘系统官方网站）
+DOMAIN-SUFFIX,servicewechat.com,DIRECT # 微信小程序运行时所需的代码包下载与后台 API 接口
+DOMAIN-SUFFIX,sina.com,DIRECT # 新浪网（包含新浪新闻、新浪财经及基础架构）
+DOMAIN-SUFFIX,smzdm.com,DIRECT # 什么是值得买（网购优惠券爆料、真实消费决策社区）
+DOMAIN-SUFFIX,snssdk.com,DIRECT # 字节跳动核心底层分发（今日头条、抖音等静态资源）
+DOMAIN-SUFFIX,sogo.com,DIRECT # 搜狗公司官方域名（输入法云联想、搜狗搜索核心）
+DOMAIN-SUFFIX,sogou.com,DIRECT # 搜狗搜索引擎主页面及相关大字库服务
+DOMAIN-SUFFIX,sogoucdn.com,DIRECT # 搜狗全站的静态组件、搜索预览图、皮肤下载 CDN
+DOMAIN-SUFFIX,sohu-inc.com,DIRECT # 搜狐公司（Sohu Inc）内部日常运转及企业管理域名
+DOMAIN-SUFFIX,sohu.com,DIRECT # 搜狐门户网站（搜狐新闻、搜狐视频、搜狐焦点）
+DOMAIN-SUFFIX,sohucs.com,DIRECT # 搜狐畅言（国内大量网站和博客喜欢挂载的评论插件）
+DOMAIN-SUFFIX,soku.com,DIRECT # 搜库（优酷视频旗下的专业影视剧站内搜索引擎）
+DOMAIN-SUFFIX,staticdn.net,DIRECT # 蓝汛等国内大型网络商建立的通用静态网页加速网
+DOMAIN-SUFFIX,steam-chat.com,DIRECT # Steam 游戏平台的内置好友聊天系统、群组语音通道
+DOMAIN-SUFFIX,steamcdn-a.akamaihd.net,DIRECT # Steam 通过 Akamai 节点分发的游戏包、补丁下载线
+DOMAIN-SUFFIX,steamcontent.com,DIRECT # Steam 用于托管创意工坊模组（Mods）、静态素材库
+DOMAIN-SUFFIX,steamgames.com,DIRECT # Steam 游戏商城宣传页、预告片等多媒体内容分发
+DOMAIN-SUFFIX,steampowered.com,DIRECT # Steam 商城主页、账户登录、社区讨论版的核心域名
+DOMAIN-SUFFIX,steamstat.us,DIRECT # Steam Status（极权威的全球 Steam 服务器状态监控）
+DOMAIN-SUFFIX,steamstatic.com,DIRECT # Steam 平台全站游戏海报、玩家头像、图标静态库
+DOMAIN-SUFFIX,steamusercontent.com,DIRECT # Steam 用户云存储（保存游戏截图、艺术作品、云档）
+DOMAIN-SUFFIX,teamviewer.com,PROXY # TeamViewer（远程桌面连接、跨设备协作控制软件官网）
+DOMAIN-SUFFIX,tencent-cloud.net,DIRECT # 腾讯云服务全球节点的内部网络链路与路由管理
+DOMAIN-SUFFIX,tencent.com,DIRECT # 腾讯公司官方网站（企业形象展示、社会招聘）
+DOMAIN-SUFFIX,tenpay.com,DIRECT # 财付通（腾讯官方支付品牌，微信支付金融底层）
+DOMAIN-SUFFIX,test-ipv6.com,DIRECT # Test-IPv6（在线检查你当前的 IPv6 连通质量与配置）
+DOMAIN-SUFFIX,tianyancha.com,DIRECT # 天眼查（国内领先的企业信息、工商登记股权查询工具）
+DOMAIN-SUFFIX,tmall.com,DIRECT # 天猫商城官方主页（品牌正品入驻综合大型电商）
+DOMAIN-SUFFIX,tmall.hk,DIRECT # 天猫国际（主营海外直邮、保税区发货的跨境电商）
+DOMAIN-SUFFIX,toutiao.com,DIRECT # 今日头条（字节跳动旗下的智能推荐个性化新闻平台）
+DOMAIN-SUFFIX,udache.com,DIRECT # 滴滴出行（小桔科技旗下老牌打车、快车业务派单系统）
+DOMAIN-SUFFIX,uning.com,DIRECT # 国内大厂或特定互联网产品团队注册的内部辅助域名
+DOMAIN-SUFFIX,v-56.com,DIRECT # 国内某些视频解析、小众视频网 P2P 缓冲底层域名
+DOMAIN-SUFFIX,visualstudio.com,DIRECT # 微软 Visual Studio（含 VS Code 下载及扩展商店）
+DOMAIN-SUFFIX,vmware.com,DIRECT # VMware（全球著名的虚拟机软件、企业级云计算大厂）
+DOMAIN-SUFFIX,wangsu.com,DIRECT # 网宿科技官网（第一梯队内容分发网络 CDN 服务商）
+DOMAIN-SUFFIX,weather.com,DIRECT # Weather.com（美国天气频道，智能手机天气核心源）
+DOMAIN-SUFFIX,wechat.com,DIRECT # 微信海外/核心通信协议服务（与前面的 qq.com 重复，可保留）
+DOMAIN-SUFFIX,weibo.com,DIRECT # 新浪微博官网、微博网页端核心浏览与互动平台
+DOMAIN-SUFFIX,weibocdn.com,DIRECT # 新浪微博全站高速 CDN（负责加载九宫格图、视频）
+DOMAIN-SUFFIX,weico.cc,DIRECT # Weico 微博客户端（曾备受好评的第三方精简版微博）
+DOMAIN-SUFFIX,weidian.com,DIRECT # 微店（手机一键开店、社交电商私域流量移动平台）
+DOMAIN-SUFFIX,whatismyip.com,DIRECT # WhatIsMyIP（国际资深网络工具站，一键查看公网 IP）
+DOMAIN-SUFFIX,windows.com,DIRECT # 微软 Windows 品牌官网（Windows 介绍与帮助中心）
+DOMAIN-SUFFIX,windowsupdate.com,DIRECT # Windows Update（电脑系统安全补丁更新特快专用线）
+DOMAIN-SUFFIX,xiami.com,DIRECT # 虾米音乐（阿里旗下老牌音乐 App，虽然已停运历史留）
+DOMAIN-SUFFIX,xiami.net,DIRECT # 虾米音乐早年部署在国内的流媒体音频歌曲服务器
+DOMAIN-SUFFIX,xiaomi.com,DIRECT # 小米商城官网、小米公司主页、米家智能硬件控制中心
+DOMAIN-SUFFIX,xiaohongshu.com,DIRECT # 小红书（年轻人的生活方式分享、种草图文社区）
+DOMAIN-SUFFIX,xhscdn.com,DIRECT # 小红书核心 CDN（负责全网高精美度种草图文流畅加载）
+DOMAIN-SUFFIX,ximalaya.com,DIRECT # 喜马拉雅 FM（极大的在线音频、有声书、电台平台）
+DOMAIN-SUFFIX,xmcdn.com,DIRECT # 喜马拉雅 FM 的核心音频流分发 CDN（听书秒加载）
+DOMAIN-SUFFIX,ydstatic.com,DIRECT # 网易有道（有道词典/有道云笔记）全站静态资产 CDN
+DOMAIN-SUFFIX,youku.com,DIRECT # 优酷视频网（阿里文娱旗下核心长视频流媒体平台）
+DOMAIN-SUFFIX,zhihu.com,DIRECT # 知乎网（国内领先的问答社区、高质内容分享平台）
+DOMAIN-SUFFIX,zhimg.com,DIRECT # 知乎核心图片服务器（知乎回答、专栏里所有配图处）
+DOMAIN-SUFFIX,zimuzu.io,DIRECT # 人人影视字幕组（原 YYeTs 核心看美剧英剧必备网站）
+DOMAIN-SUFFIX,zimuzu.tv,DIRECT # 人人影视影视剧资料库、字幕下载及粉丝交流域名
+DOMAIN-SUFFIX,zmz2019.com,DIRECT # 人人影视官方备用镜像名（历史防墙留）
+DOMAIN-SUFFIX,zmzapi.com,DIRECT # 人人影视移动端 App/电视盒子获取剧集更新的 API
+DOMAIN-SUFFIX,zmzapi.net,DIRECT # 人人影视全球备用、防劫持的高安全系数鉴权通道
+DOMAIN-SUFFIX,zmzfile.com,DIRECT # 人人影视专门用来存放、分发字幕文件（.srt）的站
