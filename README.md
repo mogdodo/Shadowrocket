@@ -44,4 +44,4 @@ udp-policy-not-supported-behaviour = REJECT
 block-quic = all-proxy
 ```
 
-将[Rule]中China.list换为blackmatrix7的Shadowrocket的China.list和China.Domin.list
+将[Rule]中Quantumult X的list换为blackmatrix7的Shadowrocket的list
